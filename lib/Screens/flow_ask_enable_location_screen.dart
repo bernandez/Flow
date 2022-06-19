@@ -39,7 +39,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 'Hmm, We can\'t seem to find you.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: primarycolor,
+                  color: kBlue,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -52,7 +52,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 'Please make sure your location is turned on.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: primarycolor,
+                  color: kBlue,
                   fontWeight: FontWeight.normal,
                   fontSize: 14,
                 ),
@@ -67,7 +67,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
               margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: primarycolor,
+                color: kBlue,
               ),
               // ignore: deprecated_member_use
               child: FlatButton(
@@ -93,7 +93,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
               color: Colors.transparent,
               child: HeadlineText(
                 title: 'Leave off',
-                color: primarycolor,
+                color: kBlue,
               ),
             ),
             Spacer(),

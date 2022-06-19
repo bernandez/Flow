@@ -43,19 +43,19 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
                 ),
                 BodyTextBold(
                   title: id,
-                  color: primarycolor,
+                  color: kBlue
                 ),
               ],
             ),
             Spacer(),
             BodyTextBold(
               title: distance,
-              color: primarycolor,
+              color: kBlue
             ),
             Spacer(),
             SvgPicture.asset(
               isflowingiconlink,
-              color: primarycolor,
+              color: kBlue
             ),
             moreInfoIcon,
             iconButtonWidget,
@@ -106,7 +106,7 @@ class WaterSourcesListItemFindScreen extends StatelessWidget {
               ),
               BodyTextBold(
                 title: id,
-                color: primarycolor,
+                color: kBlue
               ),
             ],
           ),

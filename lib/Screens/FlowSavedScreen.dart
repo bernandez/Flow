@@ -41,22 +41,22 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
   Widget buildSavedList(BuildContext context, int index, FlowSaved savedItem) {
     // print('from saved screen: ${flowList[index].savedID}');
 
-    if (flowList[index].savedFlowing == true) {
+    if (flowList[index].isflowing true) {
       ifIsFlowingIconLink = 'Assets/icons/svgs/fi-sr-flowing-filled.svg';
     } else {
       ifIsFlowingIconLink = 'Assets/icons/svgs/fi-rr-not-flowing.svg';
     }
-    if (flowList[index].savedTypeTap == 'Tap') {
+    if (flowList[index].type') {
       typeTap = true;
     } else {
       typeTap = false;
     }
     print(
         'tap location from SP is ${flowList[index].savedTapLocationLatitude}');
-    print('tap id from SP is ${flowList[index].savedID}');
+    print('tap id from SP is ${flowList[index].id
 
     return WaterSourcesListItemSavedScreen(
-      id: flowList[index].savedID,
+      id: flowList[index].id
       distance: flowList[index].savedDistance.toString(),
       isflowingiconlink: ifIsFlowingIconLink,
       moreInfoIcon: IconButton(
@@ -72,7 +72,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                   context: context,
                   builder: (BuildContext context) {
                     return BottomSheetInfo(
-                      bottomSheetID: flowList[index].savedID,
+                      bottomSheetID: flowList[index].id
                       bottomSheetDescription: flowList[index].savedDescription,
                       bottomSheetIsTypeTap: typeTap,
                       bottomSheetIsFlowing: flowList[index].savedFlowing,
@@ -94,7 +94,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
           onPressed: () {
             removeFromSavedList(
               FlowSaved(
-                savedID: flowList[index].savedID,
+                idwList[index].id,id
                 savedDescription: flowList[index].savedDescription,
                 savedDistance: flowList[index].savedDistance,
                 savedFlowing: flowList[index].savedFlowing,
@@ -104,7 +104,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                 savedTapLocationLongitude:
                     flowList[index].savedTapLocationLongitude,
               ),
-              flowList[index].savedID,
+              flowList[index].id
             );
             setState(() {});
           }),
@@ -134,7 +134,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                   child: Text(
                     'You haven\'t saved any water sources yet',
                     style: TextStyle(
-                        color: primarycolor,
+                        color: kBlue
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -171,7 +171,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                   child: Text(
                     'Saved \nWater Sources',
                     style: TextStyle(
-                      color: primarycolor,
+                      color: kBlue
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
@@ -213,7 +213,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
   }
 
   removeFromSavedList(FlowSaved savedItem, tapID) {
-    flowList.removeWhere((savedItem) => savedItem.savedID == tapID);
+    flowList.removeWhere((savedItem) => savedItem.idapID);
     if (flowList.isEmpty) setState(() {});
     saveSPData();
   }

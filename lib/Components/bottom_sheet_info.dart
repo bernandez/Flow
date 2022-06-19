@@ -70,7 +70,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
         '$estDistance km',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          color: primarycolor,
+          color: kBlue
           fontSize: 28,
         ),
       );
@@ -157,7 +157,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
               SizedBox(width: 8),
               HeadlineTextBold(
                 title: widget.bottomSheetID,
-                color: primarycolor,
+                color: kBlue
               )
             ],
           ),
@@ -176,7 +176,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
               ),
               HeadlineTextBold(
                 title: ifIsTypeTap,
-                color: primarycolor,
+                color: kBlue
               ),
             ],
           ),
@@ -194,7 +194,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
                       ifIsFlowing,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: primarycolor,
+                        color: kBlue
                         fontSize: 28,
                       ),
                     ),
@@ -230,7 +230,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
                 ),
                 elevation: 0,
                 label: Text('Get Directions'),
-                backgroundColor: primarycolor,
+                backgroundColor: kBlue
                 onPressed: () async {
                   dirInfo = await FlowMaps()
                       .getDirections(currentLocation, markerLocation);
@@ -271,7 +271,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
       checkIfSaved = addToSavedFAB();
     } else {
       for (int i = 0; i < flowList.length; i++) {
-        if (flowList[i].savedID == widget.bottomSheetID) {
+        if (flowList[i].ididget.bottomSheetID) {
           checkIfSaved = removeFromSavedFAB();
         } else {
           checkIfSaved = addToSavedFAB();
@@ -286,20 +286,20 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
   Widget addToSavedFAB() {
     return FloatingActionButton(
       elevation: 0,
-      backgroundColor: primarycolor.withOpacity(.2),
+      backgroundColor: kBlueacity(.2),
       child: SvgPicture.asset('Assets/icons/svgs/fi-rr-heart.svg',
-          color: primarycolor),
+          color: kBlue
       onPressed: () {
         setState(() {
           // isSaved = true;
           addToSavedList(FlowSaved(
-            savedID: widget.bottomSheetID,
-            savedDescription: widget.bottomSheetDescription,
-            savedDistance: '$estDistance Km',
-            savedFlowing: widget.bottomSheetIsFlowing,
-            savedTypeTap: ifIsTypeTap,
-            savedTapLocationLatitude: markerLocation.latitude.toDouble(),
-            savedTapLocationLongitude: markerLocation.longitude.toDouble(),
+            idget.bottomSheetID,
+            descriptionget.bottomSheetDescription,
+            distancestDistance Km',
+            isflowingidget.bottomSheetIsFlowing,
+            typepeTap,
+            lattude.toDouble(),
+            longitude.toDouble(),
 
             // savedisSaved: isSaved,
           ));
@@ -315,21 +315,21 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
   Widget removeFromSavedFAB() {
     return FloatingActionButton(
       elevation: 0,
-      backgroundColor: secondarycolor.withOpacity(.2),
+      backgroundColor: kFuchsiapacity(.2),
       child: SvgPicture.asset('Assets/icons/svgs/fi-sr-heart.svg',
-          color: secondarycolor),
+          color: kFuchsia
       onPressed: () {
         setState(() {
           //  isSaved = false;
           removeFromSavedList(
             FlowSaved(
-              savedID: widget.bottomSheetID,
-              savedDescription: widget.bottomSheetDescription,
-              savedDistance: widget.distance.toString(),
-              savedFlowing: widget.bottomSheetIsFlowing,
-              savedTypeTap: ifIsTypeTap,
-              savedTapLocationLatitude: markerLocation.latitude.toDouble(),
-              savedTapLocationLongitude: markerLocation.longitude.toDouble(),
+              idget.bottomSheetID,
+              descriptionget.bottomSheetDescription,
+              distanceget.distance.toString(),
+              isflowingidget.bottomSheetIsFlowing,
+              typepeTap,
+              lattude.toDouble(),
+              longitude.toDouble(),
               // savedisSaved: isSaved,
             ),
             widget.bottomSheetID,
@@ -350,7 +350,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
   }
 
   void removeFromSavedList(FlowSaved savedItem, tapID) {
-    flowList.removeWhere((savedItem) => savedItem.savedID == tapID);
+    flowList.removeWhere((savedItem) => savedItem.idapID);
     if (flowList.isEmpty) setState(() {});
     saveSPData();
   }

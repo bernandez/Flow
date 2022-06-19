@@ -129,7 +129,7 @@ class _FlowMapsState extends State<FlowMaps> {
       backgroundColor: Colors.white,
       child: SvgPicture.asset(
         iconLink,
-        color: primarycolor,
+        color: kBlue
         // height: 16,
       ),
     );
@@ -268,7 +268,7 @@ class _FlowMapsState extends State<FlowMaps> {
                       Polyline(
                         geodesic: true,
                         polylineId: const PolylineId('overview_polyline'),
-                        color: primarycolor,
+                        color: kBlue
                         width: 6,
                         zIndex: 1,
                         endCap: Cap.roundCap,

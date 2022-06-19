@@ -152,7 +152,7 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
-                            color: primarycolor),
+                            color: kBlue
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -162,7 +162,7 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                       SizedBox(height: 10),
                       HeadlineTextBold(
                         title: '${shortestDistance.toStringAsFixed(2)} Km',
-                        color: primarycolor,
+                        color: kBlue
                       ),
                       SizedBox(height: 30),
                       SingleChildScrollView(
@@ -195,7 +195,7 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25),
-                                  color: primarycolor,
+                                  color: kBlue
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -230,14 +230,14 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                                     borderRadius: BorderRadius.circular(25),
                                     color: Colors.white,
                                     border: Border.all(
-                                      color: primarycolor,
+                                      color: kBlue
                                     )),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 10.0),
                                   child: BodyText(
                                     title: 'No thanks',
-                                    color: primarycolor,
+                                    color: kBlue
                                   ),
                                 ),
                               ),

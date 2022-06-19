@@ -58,7 +58,7 @@ class NavigationInstructions extends StatelessWidget {
                         children: [
                           HeadlineTextBold(
                             title: tapID,
-                            color: primarycolor,
+                            color: kBlue
                           ),
                           SizedBox(height: 10),
                           BodyText(
@@ -126,7 +126,7 @@ class NavInstrucListItem extends StatelessWidget {
           Text(nextNavInstruction),
           Divider(
             thickness: 3,
-            color: primarycolor,
+            color: kBlue
           ),
           SizedBox(
             height: 5,

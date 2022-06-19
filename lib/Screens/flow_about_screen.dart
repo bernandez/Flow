@@ -32,7 +32,7 @@ class FlowAboutScreen extends StatelessWidget {
                     ),
                     HeadlineTextBold(
                         title: 'Find water easily around Bambili',
-                        color: primarycolor),
+                        color: kBlue),
                   ],
                 ),
               ),
@@ -65,7 +65,7 @@ class FlowAboutScreen extends StatelessWidget {
                           tag: 'teamflowherotag',
                           child: Text('Team Flow',
                               style: TextStyle(
-                                  color: primarycolor,
+                                  color: kBlue,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18)),
                         ),
@@ -122,28 +122,28 @@ class TeamFlowNames extends StatelessWidget {
                   children: [
                     BodyText(
                       title: 'Alouzeh Brandone',
-                      color: primarycolor,
+                      color: kBlue,
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     BodyText(
                       title: 'Ida Delphine',
-                      color: primarycolor,
+                      color: kBlue,
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     BodyText(
                       title: 'Nuikweh Lewis',
-                      color: primarycolor,
+                      color: kBlue,
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     BodyText(
                       title: 'Chi Karl',
-                      color: primarycolor,
+                      color: kBlue,
                     ),
                     SizedBox(
                       height: 10,

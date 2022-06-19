@@ -20,7 +20,7 @@ class FlowSnackBar extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16),
         child: BodyText(
           title: text,
-          color: primarycolor,
+          color: kBlue
         ),
       ),
       backgroundColor: Colors.white,

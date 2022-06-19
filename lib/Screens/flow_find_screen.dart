@@ -29,7 +29,7 @@ class _FlowFindScreenState extends State<FlowFindScreen> {
       BuildContext context, DocumentSnapshot document) {
     if (document['isFlowing'] == true) {
       ifisflowingiconlink = 'Assets/icons/svgs/fi-sr-flowing-filled.svg';
-      flowingColor = primarycolor;
+      flowingColor = kBlue;
     } else // add icon for when the tap is flowing
     {
       ifisflowingiconlink = 'Assets/icons/svgs/fi-rr-not-flowing.svg';
@@ -91,7 +91,7 @@ class _FlowFindScreenState extends State<FlowFindScreen> {
               child: Text(
                 'Water Sources',
                 style: TextStyle(
-                  color: primarycolor,
+                  color: kBlue,
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
