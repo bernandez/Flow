@@ -1,15 +1,8 @@
 import 'dart:convert';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flow/Components/bottom_sheet_info.dart';
-import 'package:flow/Components/flow_shared_preferences.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flow/constants.dart';
 import 'package:flow/Components/flow_app_bar.dart';
-import 'package:flow/Components/sources_list_item.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FlowSavedScreen extends StatefulWidget {
@@ -134,7 +127,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                   child: Text(
                     'You haven\'t saved any water sources yet',
                     style: TextStyle(
-                        color: kBlue
+                        color: kBlue,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -171,7 +164,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                   child: Text(
                     'Saved \nWater Sources',
                     style: TextStyle(
-                      color: kBlue
+                       
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),

@@ -14,7 +14,7 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: kBlue
+      backgroundColor: kBlue,
       body: SafeArea(
         child: Column(
           children: [
@@ -70,9 +70,9 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
               // ignore: deprecated_member_use
               child: FlatButton(
                 height: 45,
-                child: HeadlineTextBold(
-                  title: 'Allow Permissions',
-                  color: kBlue
+                child: Text(
+                    'Allow Permissions',
+                   
                 ),
                 onPressed: () {
                   WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -92,9 +92,9 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 });
               },
               color: Colors.transparent,
-              child: HeadlineText(
-                title: 'Deny',
-                color: Colors.white,
+              child: Text(
+                  'Deny',
+                
               ),
             ),
             Spacer(),
