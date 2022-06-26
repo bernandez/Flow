@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 
 class CustomHeroDialogRoute<T> extends PageRoute<T> {
   CustomHeroDialogRoute({
-    @required WidgetBuilder builder,
-    RouteSettings settings,
+    required WidgetBuilder builder,
+    RouteSettings? settings,
     bool fullscreenDialog = false,
   })  : _builder = builder,
         super(settings: settings, fullscreenDialog: fullscreenDialog);

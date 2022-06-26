@@ -1,11 +1,7 @@
-import 'package:flow/Components/directions/show_closest_source_dialog.dart';
-import 'package:flow/Components/flow_maps.dart';
-import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'show_closest_source_dialog.dart';
 import 'custom_dialog_route.dart';
-import 'directions/directions_model.dart';
-
 class SearchClosestSourceButton extends StatelessWidget {
   final String _heroShowClosestSourceTag = 'hero_show_closest_source_tag';
 
@@ -36,7 +32,7 @@ class SearchClosestSourceButton extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: SvgPicture.asset(
               'Assets/icons/svgs/fi-rr-search.svg',
-              color: kBlue
+               
             ),
           ),
         ),

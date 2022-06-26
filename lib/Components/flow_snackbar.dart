@@ -1,48 +1,28 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class FlowSnackBar extends StatelessWidget {
-  final String text;
-
-  const FlowSnackBar({Key? key, this.text}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      //width: double.infinity,
-      // elevation: 0,
-      duration: Duration(milliseconds: 300),
+flowSnackBar(BuildContext context,
+    {required String message, required bool isSuccessful}) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      behavior: SnackBarBehavior.floating,
+     
+      width: double.infinity,
+      elevation: 30,
+      duration: Duration(seconds: 2),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15), topRight: Radius.circular(15))),
+        borderRadius: BorderRadius.circular(kDefaultPadding),
+      ),
       content: Padding(
-        padding: const EdgeInsets.only(left: 16),
-        child:  Text(
-            text,
-           
+        padding: const EdgeInsets.only(left: kDefaultPadding),
+        child: Text(
+          message,
+          style: Theme.of(context).textTheme.bodyText1!.copyWith(color: isSuccessful? kBlue: Colors.white),
         ),
       ),
-      backgroundColor: Colors.white,
-    )) as Widget;
-    // return SnackBar(
-    //   content: Container(
-    //     decoration: BoxDecoration(
-    //       color: Colors.white,
-    //       borderRadius: BorderRadius.only(
-    //         topLeft: Radius.circular(10),
-    //         topRight: Radius.circular(10),
-    //       ),
-    //     ),
-    //     child: Padding(
-    //       padding: const EdgeInsets.all(16),
-    //       child:  Text(
-    //           text,
-    //         color: primarycolor,
-    //       ),
-    //     ),
-    //   ),
-    //   backgroundColor: Colors.transparent,
-    // );
-  }
+      backgroundColor: isSuccessful?  Colors.white: kFuchsia,
+    ),
+  ) as Widget;
 }

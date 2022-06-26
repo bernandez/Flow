@@ -15,7 +15,7 @@ class SearchBar extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: textcolor.withOpacity(.1),
+            color: Theme.of(context).primaryColor.withOpacity(.1),
             spreadRadius: 3,
             blurRadius: 7,
           )
