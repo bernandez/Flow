@@ -5,7 +5,7 @@ class FlowAppBar extends StatelessWidget with PreferredSizeWidget {
   final Size preferredSize;
 
   FlowAppBar({
-    Key key,
+    Key? key,
   })  : preferredSize = Size.fromHeight(60.0),
         super(key: key);
 

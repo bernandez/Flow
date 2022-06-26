@@ -1,22 +1,20 @@
+import 'package:flow/models/flow_location_model.dart';
+import 'package:flow/models/flow_location_model.dart';
+import 'package:flow/Components/bottom_sheet_info.dart';
+import 'package:flow/models/flow_location_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flow/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class WaterSourcesListItemSavedScreen extends StatelessWidget {
-  final String id;
-  final String distance;
-  final String isflowingiconlink;
-  final Widget iconButtonWidget;
-  final Widget moreInfoIcon;
+  final FlowLocation waterSource;
+  final String? distance;
 
   const WaterSourcesListItemSavedScreen({
-    Key key,
-    this.id,
+    Key? key,
+     required this.waterSource,
     this.distance,
-    this.isflowingiconlink,
-    this.iconButtonWidget,
-    this.moreInfoIcon,
   }) : super(key: key);
 
   Widget build(BuildContext context) {
@@ -37,28 +35,48 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                BodyText(
-                  title: 'ID: ',
-                  color: textcolor,
-                ),
-                BodyTextBold(
-                  title: id,
-                  color: kBlue
-                ),
+                Text('ID: ',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(color: Theme.of(context).primaryColor)),
+                Text(waterSource.name,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(color: Theme.of(context).primaryColor)),
               ],
             ),
             Spacer(),
-            BodyTextBold(
-              title: distance,
-              color: kBlue
+            Text(
+              distance ?? "Calculating",
             ),
             Spacer(),
             SvgPicture.asset(
-              isflowingiconlink,
-              color: kBlue
+                waterSource.isflowing
+                    ? "Assets/icons/svgs/fi-sr-flowing-filled.svg"
+                    : "Assets/icons/svgs/fi-rr-not-flowing.svg",
+                color: waterSource.isflowing
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).iconTheme.color),
+            IconButton(
+              onPressed: () {
+                showBottomSheet(
+                    context: context,
+                    builder: (context) =>
+                        BottomSheetInfo(waterSource: waterSource));
+              },
+              icon: SvgPicture.asset(
+                  'Assets/icons/svgs/fi-rr-angle-small-down.svg',
+                  color: Theme.of(context).iconTheme.color),
             ),
-            moreInfoIcon,
-            iconButtonWidget,
+            IconButton(
+              onPressed: () {
+                //TODO: add method to delete saved location
+              },
+              icon: SvgPicture.asset(" Assets/icons/svgs/fi-rr-trash.svg",
+                  color: kFuchsia),
+            )
           ],
         ),
       ),
@@ -67,23 +85,14 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
 }
 
 class WaterSourcesListItemFindScreen extends StatelessWidget {
-  final String id;
-  final String description;
-  final String isflowingiconlink;
-  final Widget iconButtonWidget;
-  final Widget moreInfoIcon;
-  final Color flowIconColor;
+  final FlowLocation waterSource;
 
   const WaterSourcesListItemFindScreen({
-    Key key,
-    this.id,
-    this.description,
-    this.isflowingiconlink,
-    this.iconButtonWidget,
-    this.moreInfoIcon,
-    this.flowIconColor,
+    Key? key,
+    required this.waterSource,
   }) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
@@ -100,28 +109,38 @@ class WaterSourcesListItemFindScreen extends StatelessWidget {
         children: [
           Row(
             children: [
-              BodyText(
-                title: 'ID: ',
-                color: textcolor,
-              ),
-              BodyTextBold(
-                title: id,
-                color: kBlue
+              Text(
+                waterSource.id,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: Theme.of(context).primaryColor),
               ),
             ],
           ),
           SizedBox(width: 10),
-          BodyText(
-            title: description,
-            color: textcolor,
+          Text(
+            "${waterSource.description.substring(0, 20)}...",
           ),
           Spacer(),
           SvgPicture.asset(
-            isflowingiconlink,
-            color: flowIconColor,
-          ),
-          moreInfoIcon,
-          iconButtonWidget,
+              waterSource.isflowing
+                  ? "Assets/icons/svgs/fi-rr-flowing-filled.svg"
+                  : "Assets/icons/svgs/fi-rr-not-flowing.svg",
+              color: waterSource.isflowing
+                  ? Theme.of(context).primaryColor
+                  : Theme.of(context).iconTheme.color),
+          IconButton(
+            onPressed: () {
+              showBottomSheet(
+                  context: context,
+                  builder: (context) =>
+                      BottomSheetInfo(waterSource: waterSource));
+            },
+            icon: SvgPicture.asset(
+                'Assets/icons/svgs/fi-rr-angle-small-down.svg',
+                color: Theme.of(context).iconTheme.color),
+          )
         ],
       ),
     );
