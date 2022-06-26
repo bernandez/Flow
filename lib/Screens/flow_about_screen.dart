@@ -30,9 +30,9 @@ class FlowAboutScreen extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    HeadlineTextBold(
-                        title: 'Find water easily around Bambili',
-                        color: kBlue),
+                    Text(
+                       'Find water easily around Bambili',
+                    ),
                   ],
                 ),
               ),
@@ -40,8 +40,8 @@ class FlowAboutScreen extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: screenHeight * .07),
                 child: Column(
                   children: [
-                    BodyText(
-                      title: 'Developed By',
+                   Text(
+                      'Developed By'
                     ),
                     SizedBox(
                       height: 15,
@@ -96,7 +96,7 @@ class FlowAboutScreen extends StatelessWidget {
 }
 
 class TeamFlowNames extends StatelessWidget {
-  const TeamFlowNames({Key key}) : super(key: key);
+  const TeamFlowNames({ Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -120,32 +120,30 @@ class TeamFlowNames extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    BodyText(
-                      title: 'Alouzeh Brandone',
-                      color: kBlue,
+                   Text(
+                    'Alouzeh Brandone'
+                 
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    BodyText(
-                      title: 'Ida Delphine',
-                      color: kBlue,
+                   Text( 'Ida Delphine'
+                   
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    BodyText(
-                      title: 'Nuikweh Lewis',
-                      color: kBlue,
+                   Text(
+                      'Nuikweh Lewis'
+                    
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    BodyText(
-                      title: 'Chi Karl',
-                      color: kBlue,
-                    ),
-                    SizedBox(
+                    Text(
+                      'Chi Karl')
+                  
+                   , SizedBox(
                       height: 10,
                     ),
                   ],

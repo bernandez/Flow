@@ -78,8 +78,8 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
               );
             case ConnectionState.none:
               return CustomAlertHeroDialog(
-                child: HeadlineTextBold(
-                  title: 'You are offline',
+                child: Text(
+                    'You are offline',
                 ),
               );
             default:
@@ -152,7 +152,7 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
-                            color: kBlue
+                             
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -160,9 +160,9 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 10),
-                      HeadlineTextBold(
-                        title: '${shortestDistance.toStringAsFixed(2)} Km',
-                        color: kBlue
+                      Text(
+                          '${shortestDistance.toStringAsFixed(2)} Km',
+                         
                       ),
                       SizedBox(height: 30),
                       SingleChildScrollView(
@@ -195,13 +195,13 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25),
-                                  color: kBlue
+                                   
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 25, vertical: 11.0),
-                                  child: BodyTextBold(
-                                    title: 'Lets go!',
+                                  child:  Text(
+                                      'Lets go!',
                                     color: Colors.white,
                                   ),
                                 ),
@@ -230,14 +230,14 @@ class _ShowClosestSourceDialogState extends State<ShowClosestSourceDialog> {
                                     borderRadius: BorderRadius.circular(25),
                                     color: Colors.white,
                                     border: Border.all(
-                                      color: kBlue
+                                       
                                     )),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 10.0),
-                                  child: BodyText(
-                                    title: 'No thanks',
-                                    color: kBlue
+                                  child:  Text(
+                                      'No thanks',
+                                     
                                   ),
                                 ),
                               ),
@@ -258,7 +258,7 @@ class CustomAlertHeroDialog extends StatelessWidget {
   final Widget child;
   final String _heroShowClosestSourceTag = 'hero_show_closest_source_tag';
 
-  const CustomAlertHeroDialog({Key key, @required this.child})
+  const CustomAlertHeroDialog({Key? key, @required this.child})
       : super(key: key);
 
   @override

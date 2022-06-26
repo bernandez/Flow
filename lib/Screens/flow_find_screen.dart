@@ -116,7 +116,7 @@ class _FlowFindScreenState extends State<FlowFindScreen> {
                         ),
                       );
                     case ConnectionState.none:
-                      //return BodyText(title: 'You are offline');
+                      //return Text( 'You are offline');
                       return FlowSnackBar(
                         text: 'Oops, You are offline',
                       );
