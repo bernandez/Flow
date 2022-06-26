@@ -1,5 +1,6 @@
 class FlowLocation {
   String id;
+  String name;
   String description;
   String? distance;
   bool isflowing;
@@ -11,6 +12,7 @@ class FlowLocation {
   FlowLocation({
    required  this.id,
     required this.description,
+    required this.name,
     this.distance,
     required this.isflowing,
     required this.type,
@@ -21,26 +23,28 @@ class FlowLocation {
 
   ///convert from map to flowSaved object
   FlowLocation.fromMap(Map map)
-      : this.id = map[
+      : id = map[
             'id'], // assigning ths SavedID from the constructor to the 'ID' property/Variable of our map
-        this.description = map['description'],
-        this.distance = map['distance'],
-        this.isflowing = map['isFlowing'],
-        this.type = map['type'],
-        this.lat = map['lat'],
-        this.long = map['long'];
+        description = map['description'],
+        name = map['name'],
+        distance = map['distance'],
+        isflowing = map['isFlowing'],
+        type = map['type'],
+        lat = map['lat'],
+        long = map['long'];
   //  this.savedisSaved = map['isSaved'];
 
   ///convert from flowSaved Object to a map
   Map toMap() {
     return {
-      'id': this.id,
-      'description': this.description,
-      'distance': this.distance,
-      'flowing': this.isflowing,
-      'type': this.type,
-      'lat': this.lat,
-      'long': this.long,
+      'id': id,
+      'name': name,
+      'description': description,
+      'distance': distance,
+      'flowing': isflowing,
+      'type': type,
+      'lat': lat,
+      'long': long,
       // 'isSaved': this.savedisSaved,
     };
   }
