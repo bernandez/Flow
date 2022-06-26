@@ -26,9 +26,9 @@ class SearchBar extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
-            child: BodyText(
-              title: 'Search By Radius',
-              color: kBlueacity(.4),
+            child:  Text(
+                'Search By Radius',
+              
             ),
           ),
           Padding(
@@ -36,7 +36,7 @@ class SearchBar extends StatelessWidget {
             child: IconButton(
               icon: SvgPicture.asset(
                 'Assets/icons/svgs/fi-rr-search.svg',
-                color: kBlue
+                 
               ),
               onPressed: () {},
             ),

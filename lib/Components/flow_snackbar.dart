@@ -6,7 +6,7 @@ import '../constants.dart';
 class FlowSnackBar extends StatelessWidget {
   final String text;
 
-  const FlowSnackBar({Key key, this.text}) : super(key: key);
+  const FlowSnackBar({Key? key, this.text}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -18,9 +18,9 @@ class FlowSnackBar extends StatelessWidget {
               topLeft: Radius.circular(15), topRight: Radius.circular(15))),
       content: Padding(
         padding: const EdgeInsets.only(left: 16),
-        child: BodyText(
-          title: text,
-          color: kBlue
+        child:  Text(
+            text,
+           
         ),
       ),
       backgroundColor: Colors.white,
@@ -36,8 +36,8 @@ class FlowSnackBar extends StatelessWidget {
     //     ),
     //     child: Padding(
     //       padding: const EdgeInsets.all(16),
-    //       child: BodyText(
-    //         title: text,
+    //       child:  Text(
+    //           text,
     //         color: primarycolor,
     //       ),
     //     ),

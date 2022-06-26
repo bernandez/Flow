@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flow/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flow/Components/flow_shared_preferences.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -21,7 +20,7 @@ class BottomSheetInfo extends StatefulWidget {
   final LatLng tapLocation;
 
   BottomSheetInfo({
-    Key key,
+    Key? key,
     this.bottomSheetID,
     this.bottomSheetDescription,
     this.bottomSheetIsTypeTap,
@@ -70,7 +69,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
         '$estDistance km',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          color: kBlue
+           Text
           fontSize: 28,
         ),
       );
@@ -153,30 +152,30 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
         children: [
           Row(
             children: [
-              BodyText(title: 'ID:'),
+              Text( 'ID:'),
               SizedBox(width: 8),
-              HeadlineTextBold(
-                title: widget.bottomSheetID,
-                color: kBlue
+              Text(
+                  widget.bottomSheetID,
+                 
               )
             ],
           ),
           SizedBox(height: 15),
-          BodyText(
-            title: widget.bottomSheetDescription,
+           Text(
+              widget.bottomSheetDescription,
           ),
           SizedBox(height: 15),
           Row(
             children: [
-              BodyText(
-                title: 'Type: ',
+               Text(
+                  'Type: ',
               ),
               SizedBox(
                 width: 8,
               ),
-              HeadlineTextBold(
-                title: ifIsTypeTap,
-                color: kBlue
+              Text(
+                  ifIsTypeTap,
+                 
               ),
             ],
           ),
@@ -189,12 +188,12 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BodyText(title: 'Status:'),
+                    Text( 'Status:'),
                     Text(
                       ifIsFlowing,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: kBlue
+                         
                         fontSize: 28,
                       ),
                     ),
@@ -205,7 +204,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    BodyText(title: 'Approx. Distance:'),
+                    Text( 'Approx. Distance:'),
                     distanceText(),
                     // Text(
                     //   '$estDistance km',
@@ -288,7 +287,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
       elevation: 0,
       backgroundColor: kBlueacity(.2),
       child: SvgPicture.asset('Assets/icons/svgs/fi-rr-heart.svg',
-          color: kBlue
+           
       onPressed: () {
         setState(() {
           // isSaved = true;
