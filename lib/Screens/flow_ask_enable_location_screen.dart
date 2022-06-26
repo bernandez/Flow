@@ -1,6 +1,5 @@
 import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flow/Components/Permissions.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FlowAskEnableLocation extends StatefulWidget {
@@ -78,7 +77,8 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 ),
                 onPressed: () {
                   WidgetsBinding.instance.addPostFrameCallback((_) {
-                    Navigator.of(context).pop(requestServiceEnabled());
+                    ///TODO: request to tuen on location
+                    Navigator.of(context).pop();
                   });
                 },
               ),

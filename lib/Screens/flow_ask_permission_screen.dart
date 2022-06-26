@@ -1,6 +1,5 @@
 import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flow/Components/Permissions.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FlowAskPermissions extends StatefulWidget {
@@ -76,7 +75,8 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 ),
                 onPressed: () {
                   WidgetsBinding.instance.addPostFrameCallback((_) {
-                    Navigator.of(context).pop(requestPermissions());
+                  //  TODO: request permissions
+                    Navigator.of(context).pop();
                   });
                 },
               ),

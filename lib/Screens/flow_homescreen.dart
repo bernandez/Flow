@@ -1,84 +1,34 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flow/Components/Permissions.dart';
-import 'package:flow/Screens/FlowAskPermissionsScreen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flow/Components/flow_app_bar.dart';
-import 'package:flow/Screens/FlowAskEnableLocationScreen.dart';
 import 'package:flow/Components/flow_maps.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../Components/search_closest_source_button.dart';
 
 class FlowHomeScreen extends StatefulWidget {
+  const FlowHomeScreen({Key? key}) : super(key: key);
+
   @override
   _FlowHomeScreenState createState() => _FlowHomeScreenState();
 }
 
 class _FlowHomeScreenState extends State<FlowHomeScreen> {
-  Location location = Location();
-  double shortestDistance;
-  String closestSourceDistance;
-  String closestSourceID;
-  String closestSourceDescription;
-  List<double> sourceDistancesList;
-  LatLng currentLocation;
-  LatLng markerLocation;
-  GeoPoint firebaseLocation;
+  // double shortestDistance;
+  // String closestSourceDistance;
+  // String closestSourceID;
+  // String closestSourceDescription;
+  // List<double> sourceDistancesList;
+  // LatLng currentLocation;
+  // LatLng markerLocation;
+  // GeoPoint firebaseLocation;
 
-  final Stream<QuerySnapshot> flowFirestoreStream =
-      FirebaseFirestore.instance.collection('flow_water_sources').snapshots();
+  
 
-  // @override
-  // void initState() {
-  //   //getCurrentLocation();
-  //   Future.delayed(Duration(seconds: 2), () {
-  //     calculateClosestSource();
-  //   });
-  //
-  //   super.initState();
-  // }
-
-  Future<void> checkPermissionStatus() async {
-    Future.delayed(Duration(seconds: 5), () async {
-      PermissionStatus currentPermissionStatus = await getPermissionStatus();
-      print(
-          'permission  in check perm func from permisssion page getpermstat func is : ${await getPermissionStatus()}');
-
-      if (currentPermissionStatus != PermissionStatus.granted) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-                builder: (BuildContext context) => FlowAskPermissions()),
-          );
-        });
-      }
-    });
-  }
-
-  Future<void> checkIfServiceEnabled() async {
-    Future.delayed(Duration(seconds: 7), () async {
-      bool serviceEnabledStatus = await checkServiceEnabled();
-
-      print(
-          'wether enabled status from permission page is : ${await checkServiceEnabled()}');
-
-      if (serviceEnabledStatus != true) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-                builder: (BuildContext context) => FlowAskEnableLocation()),
-          );
-        });
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      checkPermissionStatus();
-      checkIfServiceEnabled();
-    });
+ 
 
     return Scaffold(
       appBar: FlowAppBar(),
@@ -86,8 +36,30 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
         child: Stack(
           children: [
             FlowMaps(),
-            //calculateClosestSource(),
-            // SearchBar(),
+            Padding(
+          padding: EdgeInsets.fromLTRB(16, 80, 16, 16.0),
+          child: Align(
+            alignment: Alignment.topRight,
+            child: Column(
+              children: <Widget>[
+                IconButton(
+                 onPressed:(){
+                  HapticFeedback.lightImpact();
+                  Feedback.forTap(context);
+                   ///TODO: add method to swtich map type
+                 },
+              
+                icon: SvgPicture.asset('Assets/icons/svgs/fi-rr-map-change.svg', color: Theme.of(context).primaryColor,)  ,
+                ), // toggle map type button
+                SizedBox(height: 10.0),
+                SearchClosestSourceButton(),
+
+           
+              ],
+            ),
+          ),
+        ),
+    
           ],
         ),
       ),
@@ -95,13 +67,4 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
     );
   }
 
-  // ///getting the current location
-  // getCurrentLocation() async {
-  //   final LocationData currentLocData = await getLocation();
-  //   currentLocation = LatLng(currentLocData.latitude, currentLocData.longitude);
-  //
-  //   print('current location data is $currentLocation');
-  //
-  //   return currentLocation;
-  // }
 }
