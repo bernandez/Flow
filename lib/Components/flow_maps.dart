@@ -87,34 +87,43 @@ class _FlowMapsState extends State<FlowMaps> {
 
         }
         return
-            GoogleMap(
-                    initialCameraPosition: CameraPosition(
-                      target: _center,
-                      zoom: 15.0,
-                    ),
-                    mapType: _currentMapType,
-                    markers: flowData.flowMarkers,
-                    onCameraMove: _onCameraMove,
-                    myLocationEnabled: true,
-                    polylines: {
-                      if (flowData.directions != null)
-                        Polyline(
-                          geodesic: true,
-                          polylineId: const PolylineId('overview_polyline'),
-                          width: 6,
-                          zIndex: 1,
-                          endCap: Cap.roundCap,
-                          startCap: Cap.roundCap,
-                          jointType: JointType.bevel,
-                          points: flowData.directions!.polylinePoints
-                              .map((e) => LatLng(e.latitude, e.longitude))
-                              .toList(),
+            StreamBuilder<Object>(
+              stream: flowData.getFlowDataAsStream(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if(!snapshot.hasData || snapshot.hasError){
+                 // TODO: build a page for someting went wrong
+                }
+                DocumentSnapshot docs = snapshot.data.docs;
+                return GoogleMap(
+                        initialCameraPosition: CameraPosition(
+                          target: _center,
+                          zoom: 15.0,
                         ),
-                    }
-                    //   onMapCreated: (GoogleMapController controller) {
-                    //      mapController = controller;
-                    //    },
-                    );
+                        mapType: _currentMapType,
+                        markers: flowData.flowMarkers,
+                        onCameraMove: _onCameraMove,
+                        myLocationEnabled: true,
+                        polylines: {
+                          if (flowData.directions != null)
+                            Polyline(
+                              geodesic: true,
+                              polylineId: const PolylineId('overview_polyline'),
+                              width: 6,
+                              zIndex: 1,
+                              endCap: Cap.roundCap,
+                              startCap: Cap.roundCap,
+                              jointType: JointType.bevel,
+                              points: flowData.directions!.polylinePoints
+                                  .map((e) => LatLng(e.latitude, e.longitude))
+                                  .toList(),
+                            ),
+                        }
+                        //   onMapCreated: (GoogleMapController controller) {
+                        //      mapController = controller;
+                        //    },
+                        );
+              }
+            );
             }
           
   

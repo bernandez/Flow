@@ -17,12 +17,12 @@ void main() async {
   flowSharedPrefs = await SharedPreferences.getInstance();
   loadSavedLocations();
   FlowLocationData().getLocation();
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark,
-    ),
-  );
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   SystemUiOverlayStyle(
+  //     statusBarColor: Colors.white,
+  //     statusBarIconBrightness: Brightness.dark,
+  //   ),
+  // );
 
   runApp(FlowApp());
 }
@@ -40,7 +40,7 @@ class FlowApp extends StatelessWidget {
         title:  'Flow',
         theme: flowLightTheme(context),
         darkTheme: flowDarkTheme(context),
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.dark,
         home: FlowBottomNavBar(),
         //  home:MyLocation(),
       ),

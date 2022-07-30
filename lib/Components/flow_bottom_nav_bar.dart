@@ -33,7 +33,7 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
         selectedItemColor: Colors.black,
