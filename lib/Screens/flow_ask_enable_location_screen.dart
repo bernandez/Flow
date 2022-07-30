@@ -13,7 +13,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,

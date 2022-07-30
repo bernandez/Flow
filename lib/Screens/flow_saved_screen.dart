@@ -21,7 +21,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
       builder: (context, flowSourcesData, childe) {
         if (flowSourcesData.savedLocationsList.isEmpty) {
           return Scaffold(
-            backgroundColor: Colors.white,
+            //backgroundColor: Colors.white,
             appBar: FlowAppBar(),
             body: Stack(
               children: [

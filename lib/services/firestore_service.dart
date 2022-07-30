@@ -15,8 +15,8 @@ class FirestoreService {
     return documents;
   }
 
-  Future<Stream<QuerySnapshot<Object?>>> getFlowDataStream(
-      BuildContext context, String location) async {
+  Stream<QuerySnapshot> getFlowDataStream(
+     String location) {
 
         
     //TODO: properly implement data stream getting
