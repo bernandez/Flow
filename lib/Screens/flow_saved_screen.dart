@@ -31,7 +31,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: screenWidth * .25),
-                      child: Image.asset('Assets/images/placeholder_image.png'),
+                      child: Image.asset('assets/images/placeholder_image.png'),
                     ),
                     SizedBox(height: 30),
                     Padding(

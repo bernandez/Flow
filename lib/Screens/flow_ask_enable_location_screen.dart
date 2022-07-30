@@ -25,7 +25,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                   left: screenWidth * .1, right: screenHeight * .15),
               //width: screenWidth * .8,
               child: SvgPicture.asset(
-                'Assets/illustrations/request-location-on.svg',
+                'assets/illustrations/request-location-on.svg',
                 height: screenHeight * .5,
               ),
             ),

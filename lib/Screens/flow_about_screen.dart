@@ -23,7 +23,7 @@ class FlowAboutScreen extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: screenWidth * .25),
                       child: Image(
-                        image: AssetImage('Assets/images/flow_logo.png'),
+                        image: AssetImage('assets/images/flow_logo.png'),
                       ),
                     ),
                     SizedBox(
