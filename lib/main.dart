@@ -40,7 +40,7 @@ class FlowApp extends StatelessWidget {
         title:  'Flow',
         theme: flowLightTheme(context),
         darkTheme: flowDarkTheme(context),
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         home: FlowBottomNavBar(),
         //  home:MyLocation(),
       ),

@@ -22,10 +22,9 @@ class _FlowMapsState extends State<FlowMaps> {
   LatLng _lastMapPosition = _center;
   MapType _currentMapType = MapType.hybrid;
 //  GoogleMapController mapController = GoogleMapController();
- late BitmapDescriptor mapMarkerRed;
- late  BitmapDescriptor mapMarkerGreen;
- late  BitmapDescriptor mapMarker;
-
+  late BitmapDescriptor mapMarkerRed;
+  late BitmapDescriptor mapMarkerGreen;
+  late BitmapDescriptor mapMarker;
 
   @override
   initState() {
@@ -36,9 +35,9 @@ class _FlowMapsState extends State<FlowMaps> {
   ///Setting custom marker icons
   void setCustomMarker() async {
     mapMarkerGreen = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), 'Assets/images/marker-icon-green.png');
+        ImageConfiguration(), 'assets/images/marker-icon-green.png');
     mapMarkerRed = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), 'Assets/images/marker-icon-red.png');
+        ImageConfiguration(), 'assets/images/marker-icon-red.png');
   }
 
   _onCameraMove(CameraPosition position) {
@@ -55,79 +54,59 @@ class _FlowMapsState extends State<FlowMaps> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<FlowWaterSourcesData>(
-      builder: (context, flowData, child) {
+    return Consumer<FlowWaterSourcesData>(builder: (context, flowData, child) {
+      for (int i = 0; i < flowData.flowLocationList.length; i++) {
+        flowMarkers.add(
+          new Marker(
+            flat: false,
+            draggable: false,
+            zIndex: 5,
+            icon: mapMarker,
+            markerId: MarkerId(flowData.flowLocationList[i].id),
+            position: LatLng(flowData.flowLocationList[i].lat,
+                flowData.flowLocationList[i].long),
+            infoWindow: InfoWindow(title: flowData.flowLocationList[i].name),
 
-        
-        for (int i=0; i<flowData.flowLocationList.length; i++) {
-
-            flowMarkers.add(
-                  new Marker(
-                    flat: false,
-                    draggable: false,
-                    zIndex: 5,
-                    icon: mapMarker,
-                    markerId: MarkerId(flowData.flowLocationList[i].id),
-                    position: LatLng(flowData.flowLocationList[i].lat, flowData.flowLocationList[i].long),
-                    infoWindow: InfoWindow(title: flowData.flowLocationList[i].name),
-
-                    onTap: () async {
-                    showModalBottomSheet(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return BottomSheetInfo(
-                              waterSource: flowData.flowLocationList[i]
-                            );
-                          },);
-
-                    
-                    }, //load bottom sheet
-                  ),
-                );
-
-        }
-        return
-            StreamBuilder<Object>(
-              stream: flowData.getFlowDataAsStream(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if(!snapshot.hasData || snapshot.hasError){
-                 // TODO: build a page for someting went wrong
-                }
-                DocumentSnapshot docs = snapshot.data.docs;
-                return GoogleMap(
-                        initialCameraPosition: CameraPosition(
-                          target: _center,
-                          zoom: 15.0,
-                        ),
-                        mapType: _currentMapType,
-                        markers: flowData.flowMarkers,
-                        onCameraMove: _onCameraMove,
-                        myLocationEnabled: true,
-                        polylines: {
-                          if (flowData.directions != null)
-                            Polyline(
-                              geodesic: true,
-                              polylineId: const PolylineId('overview_polyline'),
-                              width: 6,
-                              zIndex: 1,
-                              endCap: Cap.roundCap,
-                              startCap: Cap.roundCap,
-                              jointType: JointType.bevel,
-                              points: flowData.directions!.polylinePoints
-                                  .map((e) => LatLng(e.latitude, e.longitude))
-                                  .toList(),
-                            ),
-                        }
-                        //   onMapCreated: (GoogleMapController controller) {
-                        //      mapController = controller;
-                        //    },
-                        );
-              }
-            );
-            }
-          
-  
-      
-    ); 
+            onTap: () async {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return BottomSheetInfo(
+                      waterSource: flowData.flowLocationList[i]);
+                },
+              );
+            }, //load bottom sheet
+          ),
+        );
+      }
+      return GoogleMap(
+          initialCameraPosition: CameraPosition(
+            target: _center,
+            zoom: 15.0,
+          ),
+          mapType: _currentMapType,
+          markers: flowData.flowMarkers,
+          onCameraMove: _onCameraMove,
+          myLocationEnabled: true,
+          polylines: {
+            if (flowData.directions != null)
+              Polyline(
+                geodesic: true,
+                polylineId: const PolylineId('overview_polyline'),
+                width: 6,
+                zIndex: 1,
+                endCap: Cap.roundCap,
+                startCap: Cap.roundCap,
+                jointType: JointType.bevel,
+                points: flowData.directions!.polylinePoints
+                    .map((e) => LatLng(e.latitude, e.longitude))
+                    .toList(),
+              ),
+          }
+          //   onMapCreated: (GoogleMapController controller) {
+          //      mapController = controller;
+          //    },
+          );
+    });
   }
 }
