@@ -54,8 +54,8 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
             Spacer(),
             SvgPicture.asset(
                 waterSource.isflowing
-                    ? "Assets/icons/svgs/fi-sr-flowing-filled.svg"
-                    : "Assets/icons/svgs/fi-rr-not-flowing.svg",
+                    ? "assets/icons/svgs/flowing-filled.svg"
+                    : "assets/icons/svgs/not-flowing.svg",
                 color: waterSource.isflowing
                     ? Theme.of(context).primaryColor
                     : Theme.of(context).iconTheme.color),
@@ -67,14 +67,14 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
                         BottomSheetInfo(waterSource: waterSource));
               },
               icon: SvgPicture.asset(
-                  'Assets/icons/svgs/fi-rr-angle-small-down.svg',
+                  'assets/icons/svgs/angle-small-down.svg',
                   color: Theme.of(context).iconTheme.color),
             ),
             IconButton(
               onPressed: () {
                 //TODO: add method to delete saved location
               },
-              icon: SvgPicture.asset(" Assets/icons/svgs/fi-rr-trash.svg",
+              icon: SvgPicture.asset(" assets/icons/svgs/trash.svg",
                   color: kFuchsia),
             )
           ],
@@ -125,8 +125,8 @@ class WaterSourcesListItemFindScreen extends StatelessWidget {
           Spacer(),
           SvgPicture.asset(
               waterSource.isflowing
-                  ? "Assets/icons/svgs/fi-rr-flowing-filled.svg"
-                  : "Assets/icons/svgs/fi-rr-not-flowing.svg",
+                  ? "assets/icons/svgs/flowing-filled.svg"
+                  : "assets/icons/svgs/not-flowing.svg",
               color: waterSource.isflowing
                   ? Theme.of(context).primaryColor
                   : Theme.of(context).iconTheme.color),
@@ -138,7 +138,7 @@ class WaterSourcesListItemFindScreen extends StatelessWidget {
                       BottomSheetInfo(waterSource: waterSource));
             },
             icon: SvgPicture.asset(
-                'Assets/icons/svgs/fi-rr-angle-small-down.svg',
+                'assets/icons/svgs/angle-small-down.svg',
                 color: Theme.of(context).iconTheme.color),
           )
         ],

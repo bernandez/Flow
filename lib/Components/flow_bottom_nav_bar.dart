@@ -36,8 +36,7 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black.withOpacity(.3),
+
         currentIndex: currentMenuIndex,
         onTap: (value) {
           currentMenuIndex = value;
@@ -51,45 +50,45 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
           BottomNavigationBarItem(
             label: ('Home'),
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-home.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/home.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-home.svg',
-              color: Colors.black,
+              'assets/icons/svgs/home_alt_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Find',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-search.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/search.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-sr-search.svg',
-              color: Colors.black,
+              'assets/icons/svgs/search_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Saved',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-heart.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/heart.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-heart.svg',
-              color: Colors.black,
+              'assets/icons/svgs/heart.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'About',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-user.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/users.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-user.svg',
-              color: Colors.black,
+              'assets/icons/svgs/user_filled.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
           ),
         ],

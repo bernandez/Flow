@@ -19,7 +19,7 @@ class FlowAppBar extends StatelessWidget with PreferredSizeWidget {
         child: Padding(
           padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
           child: Image(
-            image: AssetImage('Assets/images/flow_logo.png'),
+            image: AssetImage('assets/images/flow_logo.png'),
           ),
         ),
       ),

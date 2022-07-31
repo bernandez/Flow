@@ -35,7 +35,7 @@ class SearchBar extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
             child: IconButton(
               icon: SvgPicture.asset(
-                'Assets/icons/svgs/fi-rr-search.svg',
+                'assets/icons/svgs/search.svg',
                  
               ),
               onPressed: () {},

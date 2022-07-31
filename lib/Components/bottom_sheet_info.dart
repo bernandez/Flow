@@ -100,7 +100,7 @@ class BottomSheetInfoState extends State<BottomSheetInfo> {
             children: [
               FloatingActionButton.extended(
                 icon: SvgPicture.asset(
-                  'Assets/icons/svgs/fi-rr-directions.svg',
+                  'assets/icons/svgs/directions.svg',
                   color: Colors.white,
                   height: 20,
                 ),

@@ -31,7 +31,7 @@ class SearchClosestSourceButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-search.svg',
+              'assets/icons/svgs/search.svg',
                
             ),
           ),
