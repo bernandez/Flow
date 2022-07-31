@@ -57,19 +57,19 @@ flutter:
 
   uses-material-design: true
   assets:
-    - Assets/images/
-    - Assets/images/Flow_Icons/
-    - Assets/icons/svgs/
-    - Assets/illustrations/
+    - assets/images/
+    - assets/images/Flow_Icons/
+    - assets/icons/svgs/
+    - assets/illustrations/
 
 
 
   fonts:
     - family: Product Sans
       fonts:
-        - asset: Assets/fonts/Product Sans Bold.ttf
-        - asset: Assets/fonts/Product Sans Bold Italic.ttf
-        - asset: Assets/fonts/Product Sans Italic.ttf
-        - asset: Assets/fonts/Product Sans Regular.ttf
+        - asset: assets/fonts/Product Sans Bold.ttf
+        - asset: assets/fonts/Product Sans Bold Italic.ttf
+        - asset: assets/fonts/Product Sans Italic.ttf
+        - asset: assets/fonts/Product Sans Regular.ttf
 
 
