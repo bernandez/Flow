@@ -33,6 +33,8 @@ dependencies:
   location: ^4.4.0
   cloud_firestore: ^3.1.18
   firebase_core: ^1.18.0
+  firebase_auth: ^3.3.11
+  google_sign_in: ^5.2.4
   shared_preferences: ^2.0.15
   flutter_polyline_points: ^1.0.0
   dio: ^4.0.6
