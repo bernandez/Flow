@@ -38,19 +38,21 @@ class FlowCircularButton extends StatelessWidget {
 }
 
 class FlowButton extends StatelessWidget {
-  final String iconLink;
+  final String? iconLink;
   final VoidCallback onPressed;
   final Color? iconColor;
   final Color? bgColor;
   final bool showicon;
   final String label;
+  final bool? isSecondary;
   const FlowButton({
     Key? key,
-    required this.iconLink,
+ this.iconLink,
     required this.onPressed,
      this.showicon =false,
     required this.label,
     this.iconColor,
+    this.isSecondary = false,
     this.bgColor,
     
   }) : super(key: key);
@@ -60,32 +62,37 @@ class FlowButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.zero,
-        primary: bgColor ?? Theme.of(context).scaffoldBackgroundColor,
+        primary: isSecondary!? Colors.transparent:   bgColor ?? Theme.of(context).primaryColor,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(kDefaultPadding2x)),
+            borderRadius: BorderRadius.circular(kDefaultPadding2x),
+            side: isSecondary!? BorderSide(width: 1.5, color: bgColor ?? Theme.of(context).primaryColor) : BorderSide.none
+            ),
         elevation: 0,
       ),
       onPressed: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding+4, vertical: kDefaultPadding-2),
-        child: Row(
-          children: [
-            showicon
-                ? Padding(
-                  padding: const EdgeInsets.only(right: kDefaultPadding/2),
-                  child: SvgPicture.asset(
-                      iconLink,
-                      color: iconColor ?? Theme.of(context).iconTheme.color,
-                    ),
-                )
-                : const SizedBox(),
-                
-            Text(
-              label,
-              style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18, color: iconColor),
-            ),
-          ],
+        child: Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              showicon
+                  ? Padding(
+                    padding: const EdgeInsets.only(right: kDefaultPadding/2),
+                    child: SvgPicture.asset(
+                        iconLink ?? "",
+                        color: iconColor ?? Theme.of(context).iconTheme.color,
+                      ),
+                  )
+                  : const SizedBox(),
+                  
+              Text(
+                label,
+                style:
+                    Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18, color: isSecondary!? bgColor?? Theme.of(context).primaryColor: iconColor),
+              ),
+            ],
+          ),
         ),
       ),
     );
