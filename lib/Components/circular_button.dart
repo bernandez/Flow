@@ -83,11 +83,12 @@ class FlowButton extends StatelessWidget {
             Text(
               label,
               style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
+                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18, color: iconColor),
             ),
           ],
         ),
       ),
     );
+    
   }
 }
