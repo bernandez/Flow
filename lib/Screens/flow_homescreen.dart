@@ -104,7 +104,7 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
                  
                    IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/svgs/heart.svg", color: Theme.of(context).iconTheme.color,)),
                  
-                  FlowButton(iconLink: "assets/icons/svgs/heart.svg", onPressed: (){},  label: "Get Directions", bgColor: Theme.of(context).primaryColor,)],
+                  FlowButton(iconLink: "assets/icons/svgs/heart.svg", onPressed: (){},  label: "Get Directions", bgColor: Theme.of(context).primaryColor, iconColor: Colors.white,)],
                ),
              ),
              

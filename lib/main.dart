@@ -1,5 +1,6 @@
 import 'package:flow/Components/flow_bottom_nav_bar.dart';
 import 'package:flow/firebase_options.dart';
+import 'package:flow/providers/auth_provider.dart';
 import 'package:flow/services/location_service.dart';
 import 'package:flow/services/shared_prefs_methods.dart';
 import 'package:flow/theme.dart';
@@ -35,7 +36,8 @@ class FlowApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<FlowWaterSourcesData>(create: (BuildContext context)=> FlowWaterSourcesData()),
-        ChangeNotifierProvider<FlowLocationData>(create: (BuildContext context)=> FlowLocationData())
+        ChangeNotifierProvider<FlowLocationData>(create: (BuildContext context)=> FlowLocationData()),
+        ChangeNotifierProvider<FlowUserData>(create: (BuildContext context) => FlowUserData()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -43,6 +45,7 @@ class FlowApp extends StatelessWidget {
         theme: flowLightTheme(context),
         darkTheme: flowDarkTheme(context),
         themeMode: ThemeMode.light,
+        
         home: FlowBottomNavBar(),
         //  home:MyLocation(),
       ),
