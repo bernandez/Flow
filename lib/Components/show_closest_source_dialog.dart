@@ -15,29 +15,29 @@ class ShowClosestSourceDialog extends StatelessWidget {
         builder: (context, flowSourcesData, child) {
       return CustomAlertHeroDialog(
             child: flowSourcesData.closestLocation == null
-                ? Center(
+                ? const Center(
                     child: CircularProgressIndicator(),
                   )
                 : Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        '${flowSourcesData.closestLocation?.id ?? 'Calculating'}',
-                        style: TextStyle(
+                        flowSourcesData.closestLocation?.id ?? 'Calculating',
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Text(
+                      const SizedBox(height: 10),
+                      const Text(
                         'is closest to you, and marked as flowing',
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         '${flowSourcesData.shortestDistance?.toStringAsFixed(2)} Km',
                       ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -64,7 +64,7 @@ class ShowClosestSourceDialog extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
                             GestureDetector(
                               onTap: () async {
                                 Feedback.forTap(context);
@@ -78,8 +78,8 @@ class ShowClosestSourceDialog extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(25),
                                     color: Colors.white,
                                     border: Border.all()),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
+                                child: const Padding(
+                                  padding: EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 10.0),
                                   child: Text(
                                     'No thanks',

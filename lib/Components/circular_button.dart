@@ -78,7 +78,7 @@ class FlowButton extends StatelessWidget {
                       color: iconColor ?? Theme.of(context).iconTheme.color,
                     ),
                 )
-                : SizedBox(),
+                : const SizedBox(),
                 
             Text(
               label,

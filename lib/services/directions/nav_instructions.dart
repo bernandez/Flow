@@ -33,13 +33,13 @@ class NavigationInstructions extends StatelessWidget {
               controller: scrollController,
               child: Container(
                 height: screenSize.height * .5,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
                   color: Colors.white,
                 ),
                 child: Stack(
                   children: [
-                    Positioned(
+                    const Positioned(
                       top: 5,
                       left: 5,
                       child: Text(
@@ -59,7 +59,7 @@ class NavigationInstructions extends StatelessWidget {
                               tapID,
                              
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                            Text(
                               tapDescription,
                            style: Theme.of(context).textTheme.bodyText2,
@@ -85,14 +85,14 @@ class NavigationInstructions extends StatelessWidget {
                         ),
                         child: SingleChildScrollView(
                           child: Column(
-                            children: [
+                            children: const [
+                               Text('sup'),
                               Text('sup'),
-                              Text('sup'),
-                              Text('sup'),
-                              Text('sup'),
-                              Text('sup'),
-                              Text('sup'),
-                              Text('sup'),
+                               Text('sup'),
+                               Text('sup'),
+                               Text('sup'),
+                               Text('sup'),
+                               Text('sup'),
                             ],
                           ),
                           // child: ListView.builder(
@@ -114,20 +114,21 @@ class NavInstrucListItem extends StatelessWidget {
   final String nextNavInstruction;
   final String detailedNavInstruction;
 
-  NavInstrucListItem({required this.nextNavInstruction, required this.detailedNavInstruction});
+  const NavInstrucListItem({Key? key, required this.nextNavInstruction, required this.detailedNavInstruction}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       child: Column(
         children: [
           Text(nextNavInstruction),
-          Divider(
+          const Divider(
             thickness: 3,
              
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(detailedNavInstruction),

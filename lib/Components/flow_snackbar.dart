@@ -11,7 +11,7 @@ flowSnackBar(BuildContext context,
      
       width: double.infinity,
       elevation: 30,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(kDefaultPadding),
       ),

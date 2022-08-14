@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,6 +9,8 @@ import '../screens/flow_homescreen.dart';
 import '../screens/flow_saved_screen.dart';
 
 class FlowBottomNavBar extends StatefulWidget {
+  const FlowBottomNavBar({Key? key}) : super(key: key);
+
   @override
   _FlowBottomNavBarState createState() => _FlowBottomNavBarState();
 }
@@ -18,10 +19,10 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
   int currentMenuIndex = 0;
 
   final List<Widget> _selectedMenuOptions = [
-    FlowHomeScreen(),
-    FlowFindScreen(),
-    FlowSavedScreen(),
-    FlowAboutScreen(),
+    const FlowHomeScreen(),
+    const FlowFindScreen(),
+    const FlowSavedScreen(),
+    const FlowAboutScreen(),
   ];
 
   @override

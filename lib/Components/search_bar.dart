@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flow/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SearchBar extends StatelessWidget {
+  const SearchBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 40,
       width: double.infinity,
-      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+      margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: Colors.white,
@@ -24,9 +25,9 @@ class SearchBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
-            child:  Text(
+          const Padding(
+            padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+            child:   Text(
                 'Search By Radius',
               
             ),

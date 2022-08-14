@@ -20,8 +20,8 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin: EdgeInsets.fromLTRB(15, 0, 15, 8),
-      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+      margin: const EdgeInsets.fromLTRB(15, 0, 15, 8),
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -47,11 +47,11 @@ class WaterSourcesListItemSavedScreen extends StatelessWidget {
                         .copyWith(color: Theme.of(context).primaryColor)),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Text(
               distance ?? "Calculating",
             ),
-            Spacer(),
+            const Spacer(),
             SvgPicture.asset(
                 waterSource.isflowing
                     ? "assets/icons/svgs/flowing-filled.svg"
@@ -96,8 +96,8 @@ class WaterSourcesListItemFindScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin: EdgeInsets.fromLTRB(15, 0, 15, 8),
-      padding: EdgeInsets.fromLTRB(10, 10, 0, 10),
+      margin: const EdgeInsets.fromLTRB(15, 0, 15, 8),
+      padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -118,11 +118,11 @@ class WaterSourcesListItemFindScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Text(
             "${waterSource.description.substring(0, 20)}...",
           ),
-          Spacer(),
+          const Spacer(),
           SvgPicture.asset(
               waterSource.isflowing
                   ? "assets/icons/svgs/flowing-filled.svg"

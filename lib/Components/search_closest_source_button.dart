@@ -5,13 +5,15 @@ import 'custom_dialog_route.dart';
 class SearchClosestSourceButton extends StatelessWidget {
   final String _heroShowClosestSourceTag = 'hero_show_closest_source_tag';
 
+  const SearchClosestSourceButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
         Navigator.of(context).push(CustomHeroDialogRoute(
           builder: (context) {
-            return ShowClosestSourceDialog();
+            return const ShowClosestSourceDialog();
           },
         ));
       },

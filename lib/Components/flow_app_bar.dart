@@ -6,7 +6,7 @@ class FlowAppBar extends StatelessWidget with PreferredSizeWidget {
 
   FlowAppBar({
     Key? key,
-  })  : preferredSize = Size.fromHeight(60.0),
+  })  : preferredSize = const Size.fromHeight(60.0),
         super(key: key);
 
   @override
@@ -14,7 +14,7 @@ class FlowAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      leading: Align(
+      leading: const Align(
         alignment: Alignment.center,
         child: Padding(
           padding: EdgeInsets.fromLTRB(25, 0, 0, 0),

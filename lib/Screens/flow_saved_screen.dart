@@ -7,6 +7,8 @@ import '../Components/sources_list_item.dart';
 import '../providers/flow_water_sources_data_provider.dart';
 
 class FlowSavedScreen extends StatefulWidget {
+  const FlowSavedScreen({Key? key}) : super(key: key);
+
   @override
   _FlowSavedScreenState createState() => _FlowSavedScreenState();
 }
@@ -33,7 +35,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                           EdgeInsets.symmetric(horizontal: screenWidth * .25),
                       child: Image.asset('assets/images/placeholder_image.png'),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: screenWidth * .15),
@@ -46,7 +48,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       'Once you save some, they\'ll appear here',
                       style: Theme.of(context).textTheme.bodyText2,
@@ -67,11 +69,11 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
               child: Stack(
                 children: [
                   // SearchBar(),
-                  Align(
+                  const Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 20, 0, 16),
-                      child: Text(
+                      padding: EdgeInsets.fromLTRB(20, 20, 0, 16),
+                      child:  Text(
                         'Saved \nWater Sources',
                         style: TextStyle(
                           fontSize: 28,
@@ -81,7 +83,7 @@ class _FlowSavedScreenState extends State<FlowSavedScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 100),
+                    margin: const EdgeInsets.only(top: 100),
                     child: ListView.builder(
                       itemCount: flowSourcesData.savedLocationsList.length,
                       itemExtent: 50,

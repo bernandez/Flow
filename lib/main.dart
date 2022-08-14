@@ -24,10 +24,12 @@ void main() async {
   //   ),
   // );
 
-  runApp(FlowApp());
+  runApp(const FlowApp());
 }
 
 class FlowApp extends StatelessWidget {
+  const FlowApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

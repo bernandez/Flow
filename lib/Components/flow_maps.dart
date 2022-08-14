@@ -7,9 +7,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
 class FlowMaps extends StatefulWidget {
-  FlowMaps({Key? key, this.toggleMapType}) : super();
-
+ 
   final VoidCallback? toggleMapType;
+
+  const FlowMaps({Key? key, this.toggleMapType}) : super(key: key);
 
   @override
   _FlowMapsState createState() => _FlowMapsState();
@@ -17,7 +18,7 @@ class FlowMaps extends StatefulWidget {
 
 class _FlowMapsState extends State<FlowMaps> {
   // Completer<GoogleMapController> _controller = Completer();
-  static final LatLng _center = const LatLng(6.012484, 10.259225);
+  static const LatLng _center = LatLng(6.012484, 10.259225);
   final Set<Marker> flowMarkers = {};
   LatLng _lastMapPosition = _center;
   MapType _currentMapType = MapType.hybrid;
@@ -35,9 +36,9 @@ class _FlowMapsState extends State<FlowMaps> {
   ///Setting custom marker icons
   void setCustomMarker() async {
     mapMarkerGreen = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), 'assets/images/marker-icon-green.png');
+        const ImageConfiguration(), 'assets/images/marker-icon-green.png');
     mapMarkerRed = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), 'assets/images/marker-icon-red.png');
+        const ImageConfiguration(), 'assets/images/marker-icon-red.png');
   }
 
   _onCameraMove(CameraPosition position) {
@@ -80,7 +81,7 @@ class _FlowMapsState extends State<FlowMaps> {
         );
       }
       return GoogleMap(
-          initialCameraPosition: CameraPosition(
+          initialCameraPosition: const CameraPosition(
             target: _center,
             zoom: 15.0,
           ),

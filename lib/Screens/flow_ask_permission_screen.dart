@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FlowAskPermissions extends StatefulWidget {
+  const FlowAskPermissions({Key? key}) : super(key: key);
+
   @override
   _FlowAskPermissionsState createState() => _FlowAskPermissionsState();
 }
@@ -18,7 +20,7 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
         child: Column(
           children: [
             /// Image and text Area
-            Spacer(),
+            const Spacer(),
             Container(
               padding: EdgeInsets.only(
                   left: screenWidth * .1, right: screenHeight * .15),
@@ -28,10 +30,10 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 height: screenHeight * .5,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * .1),
-              child: Text(
+              child: const Text(
                 'Flow needs access to your location for certain features to work properly',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -40,10 +42,10 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * .1),
-              child: Text(
+              child: const Text(
                 'Allow Flow to access your location?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -53,7 +55,7 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
 
@@ -69,7 +71,7 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
               // ignore: deprecated_member_use
               child: FlatButton(
                 height: 45,
-                child: Text(
+                child: const Text(
                     'Allow Permissions',
                    
                 ),
@@ -81,7 +83,7 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 },
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             // ignore: deprecated_member_use
@@ -92,12 +94,12 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 });
               },
               color: Colors.transparent,
-              child: Text(
+              child: const Text(
                   'Deny',
                 
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
