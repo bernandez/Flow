@@ -3,6 +3,7 @@ import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
 
 class FlowAboutScreen extends StatelessWidget {
+    static const id = "about screen";
   const FlowAboutScreen({Key? key}) : super(key: key);
 
   @override

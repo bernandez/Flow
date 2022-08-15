@@ -7,6 +7,7 @@ import '../screens/flow_about_screen.dart';
 import '../screens/flow_find_screen.dart';
 import '../screens/flow_homescreen.dart';
 import '../screens/flow_saved_screen.dart';
+import '../screens/order/order_screen.dart';
 
 class FlowBottomNavBar extends StatefulWidget {
   const FlowBottomNavBar({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
 
   final List<Widget> _selectedMenuOptions = [
     const FlowHomeScreen(),
-    const FlowFindScreen(),
+    const FlowOrderScreen(),
     const FlowSavedScreen(),
     const FlowAboutScreen(),
   ];
@@ -77,14 +78,14 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
               color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'assets/icons/svgs/heart.svg',
+              'assets/icons/svgs/heart_filled.svg',
               color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'About',
             icon: SvgPicture.asset(
-              'assets/icons/svgs/users.svg',
+              'assets/icons/svgs/user.svg',
               color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(

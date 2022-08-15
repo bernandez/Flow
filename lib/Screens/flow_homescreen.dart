@@ -1,14 +1,12 @@
 import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flow/Components/flow_app_bar.dart';
 import 'package:flow/Components/flow_maps.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../Components/search_closest_source_button.dart';
 import '../components/circular_button.dart';
 
 class FlowHomeScreen extends StatefulWidget {
+    static const id = "home screen";
   const FlowHomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -46,12 +44,12 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(kDefaultPadding2x)),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(kDefaultPadding),
-                      child: FlowMaps()),
+                        borderRadius: BorderRadius.circular(kDefaultPadding),
+                        child: FlowMaps()),
                   ),
                   Positioned(
-                    bottom: kDefaultPadding/2,
-                    right:0,
+                    bottom: kDefaultPadding / 2,
+                    right: 0,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -61,21 +59,21 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
                           onPressed: () {
                             HapticFeedback.lightImpact();
                             Feedback.forTap(context);
-      
+
                             ///TODO: add method to swtich map type
                           },
-                        ), 
-      
-                         FlowCircularButton(
+                        ),
+
+                        FlowCircularButton(
                           iconLink: 'assets/icons/svgs/zoom_out.svg',
                           onPressed: () {
                             HapticFeedback.lightImpact();
                             Feedback.forTap(context);
-      
+
                             ///TODO: implement map resizing
                           },
                         ),
-      
+
                         // SearchClosestSourceButton(),
                       ],
                     ),
@@ -83,31 +81,58 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
                 ],
               ),
               const SizedBox(height: kDefaultPadding),
-            Text("Tap 1", style:  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),),
-            const SizedBox(height: kDefaultPadding/2),
-            Text("Description located behind this building", style:  Theme.of(context).textTheme.bodyText2,),
-            const SizedBox(height: kDefaultPadding/2),
-             Row(
-              mainAxisSize: MainAxisSize.min,
-               children: [
-                 Text("Flowing", style:  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18, color: Theme.of(context).primaryColor)),
-                const SizedBox(width: kDefaultPadding,),
-                 Text("20 m", style:  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),),
-               ],
-             ),
-      
-             Align(
-              alignment: Alignment.centerRight,
-               child: Row(
+              Text(
+                "Tap 1",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(fontSize: 18),
+              ),
+              const SizedBox(height: kDefaultPadding / 2),
+              Text(
+                "Description located behind this building",
+                style: Theme.of(context).textTheme.bodyText2,
+              ),
+              const SizedBox(height: kDefaultPadding / 2),
+              Row(
                 mainAxisSize: MainAxisSize.min,
-                 children: [
-                 
-                   IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/svgs/heart.svg", color: Theme.of(context).iconTheme.color,)),
-                 
-                  FlowButton(iconLink: "assets/icons/svgs/heart.svg", onPressed: (){},  label: "Get Directions", bgColor: Theme.of(context).primaryColor, iconColor: Colors.white,)],
-               ),
-             ),
-             
+                children: [
+                  Text("Flowing",
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                          fontSize: 18, color: Theme.of(context).primaryColor)),
+                  const SizedBox(
+                    width: kDefaultPadding,
+                  ),
+                  Text(
+                    "20 m",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(fontSize: 18),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: SvgPicture.asset(
+                          "assets/icons/svgs/heart.svg",
+                          color: Theme.of(context).iconTheme.color,
+                        )),
+                    FlowButton(
+                      iconLink: "assets/icons/svgs/heart.svg",
+                      onPressed: () {},
+                      label: "Get Directions",
+                      bgColor: Theme.of(context).primaryColor,
+                      iconColor: Colors.white,
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -115,4 +140,3 @@ class _FlowHomeScreenState extends State<FlowHomeScreen> {
     );
   }
 }
-
