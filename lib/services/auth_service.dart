@@ -25,7 +25,7 @@ class FirebaseAuthService {
   }
 
   ///-----------Sign in with email and password---------------///
-  void signIn(String email, String password, BuildContext context) async {
+  void signIn(BuildContext context, {required String email, required String password}) async {
     try {
       final UserCredential? loggedInUser = await _auth
           .signInWithEmailAndPassword(email: email, password: password);
@@ -40,7 +40,7 @@ class FirebaseAuthService {
 
   ///---------Sign Out-----------///
 
-  void SIgnOut() async {
+  void signOut() async {
     try {
       _auth.signOut();
     } catch (e) {
