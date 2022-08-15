@@ -9,4 +9,5 @@ class FlowUserData extends ChangeNotifier {
     uid: FirebaseAuthService().getCurrentUser()?.uid,
     email: FirebaseAuthService().getCurrentUser()?.email,
   );
+
 }

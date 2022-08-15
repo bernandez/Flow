@@ -6,7 +6,7 @@ class FlowAskEnableLocation extends StatefulWidget {
   const FlowAskEnableLocation({Key? key}) : super(key: key);
 
   @override
-  Future<_FlowAskEnableLocationState> createState() async => _FlowAskEnableLocationState();
+  State<FlowAskEnableLocation> createState() => _FlowAskEnableLocationState();
 }
 
 class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
