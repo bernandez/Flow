@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../screens/flow_about_screen.dart';
-import '../screens/flow_find_screen.dart';
 import '../screens/flow_homescreen.dart';
 import '../screens/flow_saved_screen.dart';
 import '../screens/order/order_screen.dart';
@@ -13,7 +11,7 @@ class FlowBottomNavBar extends StatefulWidget {
   const FlowBottomNavBar({Key? key}) : super(key: key);
 
   @override
-  _FlowBottomNavBarState createState() => _FlowBottomNavBarState();
+  State<FlowBottomNavBar> createState() => _FlowBottomNavBarState();
 }
 
 class _FlowBottomNavBarState extends State<FlowBottomNavBar> {

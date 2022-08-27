@@ -12,14 +12,14 @@ class FlowOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ///TODO: checl wether user is signed in, if not show sign in page, else show register page
     return Consumer<FlowUserData>(
       builder: (context, userData, child) {
-        if (userData.flowUser.uid != null) {
+        if (userData.flowUser?.uid != null) {
           return Scaffold(
             body: Column(
               children: const [
                 Text("You have an ccount, now you can order"),
+                ///TODO: Build ordering page
               ],
             ),
           );
@@ -33,7 +33,7 @@ class FlowOrderScreen extends StatelessWidget {
             children: [
                    Text(" You need an account to place and order", style: Theme.of(context).textTheme.bodyText1, textAlign: TextAlign.center,),
                   
-                      SizedBox(height: kDefaultPadding2x,),
+                      const SizedBox(height: kDefaultPadding2x,),
                   FlowButton(
                       iconLink: "",
                       onPressed: () {
@@ -42,7 +42,7 @@ class FlowOrderScreen extends StatelessWidget {
                       iconColor: Colors.white,
                       label: "Sign In"),
 
-                      SizedBox(height: kDefaultPadding,),
+                      const SizedBox(height: kDefaultPadding,),
                   FlowButton(
                     isSecondary: true,
                       iconLink: "",
