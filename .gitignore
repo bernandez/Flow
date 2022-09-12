@@ -45,3 +45,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+firebase-tools-instant-win.exe
+firebase.exe
+android/app/src/main/AndroidManifest.xml

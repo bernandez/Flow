@@ -1,71 +1,147 @@
+import 'package:flow/models/flow_location_model.dart';
+import 'package:flow/models/flow_location_model.dart';
+import 'package:flow/Components/bottom_sheet_info.dart';
+import 'package:flow/models/flow_location_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flow/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class WaterSourcesListItem extends StatelessWidget {
-  final String id;
-  final String distance;
-  final String isflowingiconlink;
-  final Widget iconButtonWidget;
+class WaterSourcesListItemSavedScreen extends StatelessWidget {
+  final FlowLocation waterSource;
+  final String? distance;
 
-  const WaterSourcesListItem({
-    Key key,
-    this.id,
+  const WaterSourcesListItemSavedScreen({
+    Key? key,
+     required this.waterSource,
     this.distance,
-    this.isflowingiconlink,
-    this.iconButtonWidget,
   }) : super(key: key);
 
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin: EdgeInsets.fromLTRB(15, 0, 15, 8),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.fromLTRB(15, 0, 15, 8),
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
         /*border: Border.all(color: primarycolor.withOpacity(.5), width: 1),*/
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
+        padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               children: [
-                BodyText(
-                  title: 'ID: ',
-                  color: textcolor,
-                ),
-                BodyTextBold(
-                  title: id,
-                  color: primarycolor,
-                ),
+                Text('ID: ',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(color: Theme.of(context).primaryColor)),
+                Text(waterSource.name,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(color: Theme.of(context).primaryColor)),
               ],
             ),
-            Row(
-              children: [
-                BodyTextBold(
-                  title: distance,
-                  color: primarycolor,
-                ),
-                BodyText(
-                  title: ' approx.',
-                  color: textcolor,
-                ),
-              ],
+            const Spacer(),
+            Text(
+              distance ?? "Calculating",
             ),
+            const Spacer(),
             SvgPicture.asset(
-              isflowingiconlink,
-              color: primarycolor,
+                waterSource.isflowing
+                    ? "assets/icons/svgs/flowing-filled.svg"
+                    : "assets/icons/svgs/not-flowing.svg",
+                color: waterSource.isflowing
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).iconTheme.color),
+            IconButton(
+              onPressed: () {
+                showBottomSheet(
+                    context: context,
+                    builder: (context) =>
+                        BottomSheetInfo(waterSource: waterSource));
+              },
+              icon: SvgPicture.asset(
+                  'assets/icons/svgs/angle-small-down.svg',
+                  color: Theme.of(context).iconTheme.color),
             ),
-            iconButtonWidget,
+            IconButton(
+              onPressed: () {
+                //TODO: add method to delete saved location
+              },
+              icon: SvgPicture.asset(" assets/icons/svgs/trash.svg",
+                  color: kFuchsia),
+            )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class WaterSourcesListItemFindScreen extends StatelessWidget {
+  final FlowLocation waterSource;
+
+  const WaterSourcesListItemFindScreen({
+    Key? key,
+    required this.waterSource,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      margin: const EdgeInsets.fromLTRB(15, 0, 15, 8),
+      padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        /*border: Border.all(color: primarycolor.withOpacity(.5), width: 1),*/
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Text(
+                waterSource.id,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: Theme.of(context).primaryColor),
+              ),
+            ],
+          ),
+          const SizedBox(width: 10),
+          Text(
+            "${waterSource.description.substring(0, 20)}...",
+          ),
+          const Spacer(),
+          SvgPicture.asset(
+              waterSource.isflowing
+                  ? "assets/icons/svgs/flowing-filled.svg"
+                  : "assets/icons/svgs/not-flowing.svg",
+              color: waterSource.isflowing
+                  ? Theme.of(context).primaryColor
+                  : Theme.of(context).iconTheme.color),
+          IconButton(
+            onPressed: () {
+              showBottomSheet(
+                  context: context,
+                  builder: (context) =>
+                      BottomSheetInfo(waterSource: waterSource));
+            },
+            icon: SvgPicture.asset(
+                'assets/icons/svgs/angle-small-down.svg',
+                color: Theme.of(context).iconTheme.color),
+          )
+        ],
       ),
     );
   }

@@ -1,121 +1,46 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const primarycolor = Color(0xFF12A4EF);
+Color kBlue = const Color(0xFF12A4EF);
+Color kBlue80 = const Color(0xFF12A4EF).withOpacity(.8);
+Color kBlue60 = const Color(0xFF12A4EF).withOpacity(.6);
+Color kBlue40 = const Color(0xFF12A4EF).withOpacity(.4);
+Color kBlue20 = const Color(0xFF12A4EF).withOpacity(.2);
+
+Color kBlueDark = const Color(0xFF3EBFFF);
+Color kBlueDark80 = const Color(0xFF3EBFFF).withOpacity(.8);
+Color kBlueDark60 = const Color(0xFF3EBFFF).withOpacity(.6);
+Color kBlueDark40 = const Color(0xFF3EBFFF).withOpacity(.4);
+Color kBlueDark20 = const Color(0xFF3EBFFF).withOpacity(.2);
+
 //const secondarycolor = Color(0xFF40EFB8);
-const textcolor = Color(0xFF444444);
+//const textcolor = Color(0xFF444444);
 const orangecolor = Color(0xFFFFA070);
 //const darkbluecolor = Color(0xFF694DE8);
 const purplecolor = Color(0xFF7960E2);
-const secondarycolor = Color(0xFFF86272);
+const kFuchsia = Color(0xFFF86272);
 
-double screenHeight = MediaQueryData().size.height;
-double screenWidth = MediaQueryData().size.width;
+const Color kDark = Color(0xFF353535);
+const Color kDark80 = Color(0xB3353535);
+const Color kDark60 = Color(0x80353535);
+const Color kDark40 = Color(0x4D353535);
+const Color kDark20 = Color(0x1A353535);
 
-/// body font size setter
+double screenHeight = const MediaQueryData().size.height;
+double screenWidth = const MediaQueryData().size.width;
 
-double bodyFontSizeSetter() {
-  double customBodyFontSize;
-  if (screenWidth < 800) {
-    customBodyFontSize = 14;
-  }
-  {
-    customBodyFontSize = 16;
-  }
-  return customBodyFontSize;
-}
+const double kDefaultPadding = 16;
+const double kDefaultPadding2x = 32;
 
-/// end body font size setter
 
-/// header font size setter
-
-double headerFontSizeSetter() {
-  double customHeaderFontSize;
-  if (screenWidth < 800) {
-    customHeaderFontSize = 16;
-  }
-  {
-    customHeaderFontSize = 20;
-  }
-  return customHeaderFontSize;
-}
-
-/// end header font size setter
-
-/////// Custom Body Text Widget  /////////////
-class BodyText extends StatelessWidget {
-  final String title;
-  final color;
-
-  const BodyText({Key key, this.title, this.color}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontWeight: FontWeight.normal,
-        fontSize: bodyFontSizeSetter(),
-        color: color,
-      ),
-    );
-  }
-}
-
-class BodyTextBold extends StatelessWidget {
-  final String title;
-  final color;
-
-  const BodyTextBold({Key key, this.title, this.color}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: bodyFontSizeSetter(),
-        color: color,
-      ),
-    );
-  }
-}
-
-////////////// Custom Headline Text Widget/////////
-class HeadlineText extends StatelessWidget {
-  final String title;
-  final color;
-
-  const HeadlineText({Key key, this.title, this.color}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: headerFontSizeSetter(),
-        fontWeight: FontWeight.normal,
-        color: color,
-      ),
-    );
-  }
-}
-
-class HeadlineTextBold extends StatelessWidget {
-  final String title;
-  final color;
-
-  const HeadlineTextBold({Key key, this.title, this.color}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: headerFontSizeSetter(),
-        fontWeight: FontWeight.bold,
-        color: color,
-      ),
-    );
-  }
-}
+///----TextStyles----///
+const TextStyle kHeading = TextStyle(fontWeight: FontWeight.bold, fontSize: 28);
+const TextStyle kHeadingLight =
+    TextStyle(fontWeight: FontWeight.normal, fontSize: 28);
+const TextStyle kBody = TextStyle(fontWeight: FontWeight.normal, fontSize: 14);
+const TextStyle kBodyBold =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
+const TextStyle kButtonText =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+const TextStyle kFootNote =
+    TextStyle(fontWeight: FontWeight.normal, fontSize: 11);

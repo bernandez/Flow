@@ -1,26 +1,27 @@
-import 'package:flow/Screens/FlowFindScreen.dart';
-import 'package:flow/Screens/FlowHomeScreen.dart';
-import 'package:flow/Screens/FlowSavedScreen.dart';
-import 'package:flow/Screens/FlowAboutScreen.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flow/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../screens/flow_about_screen.dart';
+import '../screens/flow_homescreen.dart';
+import '../screens/flow_saved_screen.dart';
+import '../screens/order/order_screen.dart';
 
 class FlowBottomNavBar extends StatefulWidget {
+  const FlowBottomNavBar({Key? key}) : super(key: key);
+
   @override
-  _FlowBottomNavBarState createState() => _FlowBottomNavBarState();
+  State<FlowBottomNavBar> createState() => _FlowBottomNavBarState();
 }
 
 class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
   int currentMenuIndex = 0;
 
   final List<Widget> _selectedMenuOptions = [
-    FlowHomeScreen(),
-    FlowFindScreen(),
-    FlowSavedScreen(),
-    FlowAboutScreen(),
+    const FlowHomeScreen(),
+    const FlowOrderScreen(),
+    const FlowSavedScreen(),
+    const FlowAboutScreen(),
   ];
 
   @override
@@ -32,62 +33,62 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         type: BottomNavigationBarType.fixed,
-        elevation: 15,
-        selectedItemColor: primarycolor,
+        elevation: 0,
+
         currentIndex: currentMenuIndex,
         onTap: (value) {
           currentMenuIndex = value;
           setState(() {});
         },
-        showUnselectedLabels: true,
-        unselectedItemColor: textcolor,
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
         selectedFontSize: 12,
         unselectedFontSize: 12,
         items: [
           BottomNavigationBarItem(
             label: ('Home'),
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-home.svg',
-              color: textcolor,
+              'assets/icons/svgs/home.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-home.svg',
-              color: primarycolor,
+              'assets/icons/svgs/home_alt_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Find',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-search.svg',
-              color: textcolor,
+              'assets/icons/svgs/search.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-search.svg',
-              color: primarycolor,
+              'assets/icons/svgs/search_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Saved',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-heart.svg',
-              color: textcolor,
+              'assets/icons/svgs/heart.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-heart.svg',
-              color: primarycolor,
+              'assets/icons/svgs/heart_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'About',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-user.svg',
-              color: textcolor,
+              'assets/icons/svgs/user.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-user.svg',
-              color: primarycolor,
+              'assets/icons/svgs/user_filled.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
           ),
         ],
