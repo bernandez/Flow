@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCspgGZbZJ6Ur-sDzN6L2XEe9kNHAFTGnQ',
+    apiKey: 'API_KEY',
     appId: '1:132690797482:android:b65c149b2ed9c79b6b41d3',
     messagingSenderId: '132690797482',
     projectId: 'flow-solution-challenge',
@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAAnQdeFNtusPtOegDShEuN2noUjztS6ro',
+    apiKey: 'API_KEY',
     appId: '1:132690797482:ios:390a36369536f6096b41d3',
     messagingSenderId: '132690797482',
     projectId: 'flow-solution-challenge',
