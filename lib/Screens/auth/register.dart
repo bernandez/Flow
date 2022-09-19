@@ -1,7 +1,7 @@
 import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/circular_button.dart';
+import '../../Components/circular_button.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   static const id = "create account";

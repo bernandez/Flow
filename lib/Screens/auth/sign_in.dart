@@ -1,5 +1,5 @@
-import 'package:flow/components/circular_button.dart';
-import 'package:flow/screens/auth/register.dart';
+import 'package:flow/Components/circular_button.dart';
+import 'package:flow/Screens/auth/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

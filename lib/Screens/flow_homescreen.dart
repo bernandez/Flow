@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flow/Components/flow_maps.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import '../components/circular_button.dart';
+import '../Components/circular_button.dart';
 
 class FlowHomeScreen extends StatefulWidget {
     static const id = "home screen";
