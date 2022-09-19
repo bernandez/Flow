@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "132690797482",
-    "project_id": "flow-solution-challenge",
-    "storage_bucket": "flow-solution-challenge.appspot.com"
+    "project_number": "970123610352",
+    "project_id": "flow-d7018",
+    "storage_bucket": "flow-d7018.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:132690797482:android:b65c149b2ed9c79b6b41d3",
+        "mobilesdk_app_id": "1:970123610352:android:e1545c44e4a632934b5a35",
         "android_client_info": {
           "package_name": "com.team_fluid.flow"
         }
       },
       "oauth_client": [
         {
-          "client_id": "132690797482-l1sso4ki7nkp5p61ssi4kbsuvbrr1nne.apps.googleusercontent.com",
+          "client_id": "970123610352-8l9l8oito7i578bnkfbegbuqa9o50dpe.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCspgGZbZJ6Ur-sDzN6L2XEe9kNHAFTGnQ"
+          "current_key": "AIzaSyBrqdv2zK1nqGnnS0RaRi2898AcGl7RoEI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "132690797482-l1sso4ki7nkp5p61ssi4kbsuvbrr1nne.apps.googleusercontent.com",
+              "client_id": "970123610352-8l9l8oito7i578bnkfbegbuqa9o50dpe.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "970123610352-hfv5507ld1d86gjlcv5qd1qu2q2ldlnn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flow"
+              }
             }
           ]
         }

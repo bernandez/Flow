@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -50,20 +53,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'API_KEY',
-    appId: '1:132690797482:android:b65c149b2ed9c79b6b41d3',
-    messagingSenderId: '132690797482',
-    projectId: 'flow-solution-challenge',
-    storageBucket: 'flow-solution-challenge.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'API_KEY',
-    appId: '1:132690797482:ios:390a36369536f6096b41d3',
-    messagingSenderId: '132690797482',
-    projectId: 'flow-solution-challenge',
-    storageBucket: 'flow-solution-challenge.appspot.com',
-    iosClientId: '132690797482-1nrfg1m6a0iok0ijirfemtu5lva9emfs.apps.googleusercontent.com',
-    iosBundleId: 'com.flow',
+    apiKey: 'AIzaSyBrqdv2zK1nqGnnS0RaRi2898AcGl7RoEI',
+    appId: '1:970123610352:android:e1545c44e4a632934b5a35',
+    messagingSenderId: '970123610352',
+    projectId: 'flow-d7018',
+    storageBucket: 'flow-d7018.appspot.com',
   );
 }
