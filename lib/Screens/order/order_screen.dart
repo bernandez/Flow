@@ -1,6 +1,7 @@
 import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flow/Components/flow_maps.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flow/Components/circular_button.dart';
@@ -131,8 +132,10 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                             icon: Icon(
                               Icons.add_circle,
                           color: Theme.of(context).primaryColor,
+                          size: 40,
                  )
                  ),
+                 SizedBox(width: 20,),
 
                   Text(
                 "2",
@@ -141,12 +144,15 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                 bodyText1!.copyWith(fontSize: 30),
                 
               ),
+              SizedBox(width: 20,),
 
               IconButton(
+                
                             onPressed: () {}, 
                             icon: Icon(
                               Icons.add_circle,
                           color: Theme.of(context).primaryColor,
+                          size: 40,
                  )
                  ),
 
@@ -164,42 +170,83 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Flowing",
+                  Text("Delivery Location",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                          fontSize: 18, color: Theme.of(context).primaryColor)),
+                          fontSize: 25,)),
                   const SizedBox(
                     width: kDefaultPadding,
                   ),
-                  Text(
-                    "20 m",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontSize: 18),
-                  ),
+                
                 ],
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Row(
+
+              Row(children: [
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    side: BorderSide(width: 2.0,color: Theme.of(context).primaryColor),
+                    textStyle: const TextStyle(fontSize: 20, ),
+                    fixedSize: Size(167, 50),
+                    primary: Colors.white,
+                    onPrimary: Theme.of(context).primaryColor,
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(35)
+                  )
+                  ),
+                  onPressed: () {}, 
+                  icon: Icon(Icons.location_city_rounded), 
+                  label: Text('Live Location')),
+                    SizedBox(width: 40,),
+                    ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    side: BorderSide(width: 2.0,color: Theme.of(context).primaryColor),
+                    textStyle: const TextStyle(fontSize: 20, ),
+                    fixedSize: Size(167, 50),
+                    primary: Colors.white,
+                    onPrimary: Theme.of(context).primaryColor,
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(35)
+                  )
+                  ),
+                  onPressed: () {}, 
+                  icon: Icon(Icons.location_city_rounded), 
+                  label: Text('Pick from Map')),
+              ],),
+              SizedBox(height: 10,),
+              Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          "assets/icons/svgs/heart.svg",
-                          color: Theme.of(context).iconTheme.color,
-                        )),
-                    FlowButton(
-                      iconLink: "assets/icons/svgs/heart.svg",
-                      onPressed: () {},
-                      label: "Get Directions",
-                      bgColor: Theme.of(context).primaryColor,
-                      iconColor: Colors.white,
-                    )
+                    
+                            Text("Add Instructions for delivery",
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                          fontSize: 25,)),
+
+                    
                   ],
                 ),
-              ),
+
+                SizedBox(height: 40,),
+
+                Center(
+                  child: Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {}, 
+                        child: Text('Place Order'),
+                        style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 18, ),
+                          fixedSize: Size(351, 50),
+                              onPrimary: Colors.white,
+                              primary: Theme.of(context).primaryColor,
+                              shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(37)
+                    )
+                              
+
+                        ),),
+                    ],
+                  ),
+                )
+              
             ],
           ),
         ),
