@@ -20,6 +20,7 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
+        
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Column(
@@ -230,7 +231,12 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                   child: Row(
                     children: [
                       ElevatedButton(
-                        onPressed: () {}, 
+                        onPressed: () {
+
+                          showDialog(context: context, builder: (BuildContext context){
+                            return ComfirmationDialoguebox();
+                          });
+                        }, 
                         child: Text('Place Order'),
                         style: ElevatedButton.styleFrom(
                           textStyle: const TextStyle(fontSize: 18, ),
@@ -256,6 +262,81 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
     
   }
 }
+
+class ComfirmationDialoguebox extends StatelessWidget {
+  const ComfirmationDialoguebox({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        height: 317,
+        width: 321,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(5))
+        ),
+        child: Column(
+         children: [
+          SizedBox(height: 5,),
+          Text('How would you like to pay',style:Theme.of(context).textTheme.bodyText1!.copyWith(
+                          fontSize: 25,)),
+        SizedBox(height: 10,),
+
+        Container(
+          height: 110,
+          width: 110,
+          decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(60)),
+                  color: Theme.of(context).primaryColor.withOpacity(0.2)
+                ),
+        ),
+        
+         SizedBox(height: 10,),
+        ElevatedButton(
+                        onPressed: () {
+
+                        }, 
+                        child: Text('Immediately'),
+                        style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 18, ),
+                          fixedSize: Size(287, 50),
+                              onPrimary: Colors.white,
+                              primary: Theme.of(context).primaryColor,
+                              shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(33)
+                    )
+                              
+
+                        ),),
+                        SizedBox(height: 10,),
+
+                        ElevatedButton(
+                        onPressed: () {
+
+                        }, 
+                        child: Text('Upon Delivery'),
+                        style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 18, ),
+                          fixedSize: Size(287, 50),
+                              onPrimary: Colors.white,
+                              primary: Theme.of(context).primaryColor,
+                              shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(33)
+                    )
+                              
+
+                        ),),
+         ], 
+        ),
+      ),
+    );
+  }
+}
+
+
+
 
 
 
