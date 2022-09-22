@@ -314,7 +314,9 @@ class ComfirmationDialoguebox extends StatelessWidget {
 
                         ElevatedButton(
                         onPressed: () {
-
+                              showDialog(context: context, builder: (BuildContext context){
+                            return  OrderComfirmationButton();
+                          });
                         }, 
                         child: Text('Upon Delivery'),
                         style: ElevatedButton.styleFrom(
@@ -326,6 +328,63 @@ class ComfirmationDialoguebox extends StatelessWidget {
                       borderRadius: new BorderRadius.circular(33)
                     )
                               
+
+                        ),),
+         ], 
+        ),
+      ),
+    );
+  }
+}
+
+class OrderComfirmationButton extends StatelessWidget {
+  const OrderComfirmationButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        height: 317,
+        width: 321,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(5))
+        ),
+        child: Column(
+         children: [
+          SizedBox(height: 5,),
+          Text('Order Placed',style:Theme.of(context).textTheme.bodyText1!.copyWith(
+                          fontSize: 25,)),
+        SizedBox(height: 30,),
+
+        Container(
+          height: 110,
+          width: 110,
+          decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(60)),
+                  color: Theme.of(context).primaryColor.withOpacity(0.2)
+                ),
+        ),
+        
+         
+       
+                        SizedBox(height: 50,),
+
+                        ElevatedButton(
+                        onPressed: () {
+     Navigator.pop(context);
+                        }, 
+                        child: Text('Great!'),
+                        style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 18, ),
+                          fixedSize: Size(287, 50),
+      onPrimary: Colors.white,
+      primary: Theme.of(context).primaryColor,
+      shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(33)
+                    )
+      
 
                         ),),
          ], 
