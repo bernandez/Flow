@@ -39,6 +39,7 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   dio: ^4.0.6
   provider: ^6.0.3
+  auto_size_text:
 
 
 

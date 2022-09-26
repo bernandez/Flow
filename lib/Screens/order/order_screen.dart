@@ -37,7 +37,8 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                         borderRadius: BorderRadius.circular(kDefaultPadding2x)),
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(kDefaultPadding),
-                        child: FlowMaps()),
+                        child: FlowMaps()
+                        ),
                   ),
                   Positioned(
                     bottom: kDefaultPadding / 2,
@@ -75,10 +76,7 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
               const SizedBox(height: kDefaultPadding),
               Text(
                 "Order",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(fontSize: 30),
+                style: TextStyle(fontSize: 24),
               ),
               const SizedBox(height: kDefaultPadding ),
               Row(
@@ -94,9 +92,7 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                 
                Text(
                 "FCFA",
-                style: Theme.of(context)
-                .textTheme.
-                bodyText1!.copyWith(fontSize: 20),
+                style: TextStyle(fontSize: 14,),
                 
               ),
 
@@ -124,42 +120,41 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(28)),
                   color: Theme.of(context).primaryColor.withOpacity(0.2)
                 ),
-                child: Row(
-                        children: [
+                child: Center(
+                  child: Row(
+                          children: [
 
-                          IconButton(
-                            
-                            onPressed: () {}, 
-                            icon: Icon(
-                              Icons.add_circle,
-                          color: Theme.of(context).primaryColor,
-                          size: 40,
-                 )
-                 ),
-                 SizedBox(width: 20,),
+                            IconButton(
+                              
+                              onPressed: () {}, 
+                              icon: Icon(
+                                Icons.add_circle,
+                            color: Theme.of(context).primaryColor,
+                            size: 40,
+                   )
+                   ),
+                   SizedBox(width: 20,),
 
-                  Text(
-                "2",
-                style: Theme.of(context)
-                .textTheme.
-                bodyText1!.copyWith(fontSize: 30),
-                
+                    Text(
+                  "2",
+                 style: TextStyle(fontSize: 18,),
+                  
               ),
               SizedBox(width: 20,),
-
               IconButton(
-                
-                            onPressed: () {}, 
-                            icon: Icon(
-                              Icons.add_circle,
-                          color: Theme.of(context).primaryColor,
-                          size: 40,
-                 )
-                 ),
+                  
+                              onPressed: () {}, 
+                              icon: Icon(
+                                Icons.add_circle,
+                            color: Theme.of(context).primaryColor,
+                            size: 40,
+                   )
+                   ),
 
 
-                        ],     
+                          ],     
 
+                  ),
                 ))
               
                 ],
@@ -172,8 +167,7 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text("Delivery Location",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                          fontSize: 25,)),
+                      style: TextStyle(fontSize: 14,)),
                   const SizedBox(
                     width: kDefaultPadding,
                   ),
@@ -218,14 +212,14 @@ class _FlowOrderScreenState extends State<FlowOrderScreen> {
                   children: [
                     
                             Text("Add Instructions for delivery",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                          fontSize: 25,)),
+                      style: TextStyle(fontSize: 14,)),
 
                     
                   ],
                 ),
 
                 SizedBox(height: 40,),
+
 
                 Center(
                   child: Row(

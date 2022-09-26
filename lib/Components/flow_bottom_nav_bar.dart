@@ -1,4 +1,5 @@
 
+import 'package:flow/Screens/delivery/delivery_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +20,7 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
 
   final List<Widget> _selectedMenuOptions = [
     const FlowHomeScreen(),
-    const FlowOrderScreen(),
+    const FlowDeliveryScreen(),
     const FlowSavedScreen(),
     const FlowAboutScreen(),
   ];
